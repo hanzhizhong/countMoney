@@ -1,0 +1,22 @@
+body{
+    display:flex;
+    justify-content: center;
+}
+.bg{
+    width:16rem;
+    height:28.4rem;
+    background:url('../img/page1.png') no-repeat 0 0;
+    background-size:contain;
+    display:flex;
+    position:relative;
+}
+.money-pic{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+}
+.change-title{
+
+}
