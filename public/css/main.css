@@ -10,7 +10,7 @@ body{
     display:flex;
     position:relative;
 }
-.game-index:{
+.game-index{
     position: absolute;
     left:0;
     bottom:0;
