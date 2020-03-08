@@ -1,27 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>Game Of Count Money</title>
     <link rel="stylesheet" href="../public/css/reset.css">
     <link rel="stylesheet" href="../public/css/main.css">
 </head>
+
 <body>
     <div class="bg">
-        <div class="money-pic">
-            <img src="../public/img/d0.png" alt="随机钞票">
+        <div class="game-index">
+            <div class="money-pic"></div>
+            <div class="change-title">
+                <img class="tiaozhan" src="../public/img/pt1.png" alt="挑战">
+                <img class="speed" src="../public/img/speed.png" alt="速度">
+                <div class="ticket">
+                    <img class="ticket-dangong" src="../public/img/short.png" alt="弹弓">
+                    <img class="ticket-ad" src="../public/img/ticket.png" alt="房卷">
+
+                </div>
+            </div>
+            <div class="game-start" onclick="start2Game()">
+                <img class="beginbtn" src="../public/img/beginbtn.png" alt="开始挑战">
+                <img class="hand" src="../public/img/hand.png" alt="手指">
+            </div>
         </div>
-        <div class="change-title">
-            <img src="../public/img/pt1.png" alt="挑战">
-            <img src="../public/img/pt1.png" alt="挑战">
+        <div class="game-action">
+            <div class="action">
+                <span onclick="showRank()"></span>
+                <span onclick="showRuler()"></span>
+                <span onclick="showPrize()"></span>
+                <span onclick="showTicketUse()"></span>
+            </div>
         </div>
-        <div class="money-layout"></div>
-        <div class="game-start"></div>
+
+        <div class="shade"></div>
+        <div class="popup rank">
+            <div class="content">
+                <img onclick="closeCur(0)" class="close" src="../public/img/close.png" alt="关闭">
+                <h3>
+                    <img src="../public/img/bang.png" alt="数钱吧">
+                </h3>
+                <ul>
+                    <li>
+                        <div class="score">
+                            <img src="../public/img/user.png" alt="用户">
+                            <span>Ac总有一天</span>
+                            <span>79分</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="score">
+                            <img src="../public/img/user.png" alt="用户">
+                            <span>Ac总有一天</span>
+                            <span>79分</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="popup ruler">
+
+            <div class="content">
+                <img onclick="closeCur(1)" class="close" src="../public/img/close.png" alt="关闭">
+                <h3>活动规则</h3>
+                <ul>
+                    <li>1.每人有多次游戏机会，但是成绩只能提交一次，且提交之后不能更改!</li>
+                    <li>1.每人有多次游戏机会，但是成绩只能提交一次，且提交之后不能更改!</li>
+                    <li>1.每人有多次游戏机会，但是成绩只能提交一次，且提交之后不能更改!</li>
+                    <li>1.每人有多次游戏机会，但是成绩只能提交一次，且提交之后不能更改!</li>
+                </ul>
+            </div>
+        </div>
+        <div class="popup prize">
+
+            <div class="content">
+                <img onclick="closeCur(2)" class="close" src="../public/img/close.png" alt="关闭">
+                <h3>活动奖品</h3>
+                <ul>
+                    <li>一等奖：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠</li>
+                    <li>一等奖：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠</li>
+                    <li>一等奖：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠</li>
+                    <li>一等奖：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠</li>
+                    <li>一等奖：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠</li>
+                </ul>
+            </div>
+        </div>
+        <div class="popup tickets">
+
+            <div class="content">
+                <img onclick="closeCur(3)" class="close" src="../public/img/close.png" alt="关闭">
+                <h3>奖券使用说明</h3>
+                <ul>
+                    <li>1.奖品的使用：请务必至少提前1周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您的手机上的卡券编辑号即可使用（需同时验证获奖人姓名与手机号码）。
+                    </li>
+                    <li>1.奖品的使用：请务必至少提前1周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您的手机上的卡券编辑号即可使用（需同时验证获奖人姓名与手机号码）。
+                    </li>
+                    <li>1.奖品的使用：请务必至少提前1周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您的手机上的卡券编辑号即可使用（需同时验证获奖人姓名与手机号码）。
+                    </li>
+                    <li>1.奖品的使用：请务必至少提前1周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您的手机上的卡券编辑号即可使用（需同时验证获奖人姓名与手机号码）。
+                    </li>
+                    <li>1.奖品的使用：请务必至少提前1周致电010-81027788或81027799进行预约，并于入住时向前台服务人员出示您的手机上的卡券编辑号即可使用（需同时验证获奖人姓名与手机号码）。
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="popup personal">
+            <div class="content">
+                <img onclick="closeCur(4)" class="close" src="../public/img/close.png" alt="关闭">
+                <h3>
+                    <img src="../public/img/userMsg.png" alt="填写个人信息">
+                    <span>个人信息将作为领奖依据请确认填写信息</span>
+                </h3>
+                <ul>
+                    <li>
+                        <input type="text" name="username" placeholder="姓名">
+                    </li>
+                    <li>
+                        <input type="text" name="phone" placeholder="电话">
+                    </li>
+                    <li><button>提交并开始游戏</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="game-page">
+            <div class="ad">
+                <ul>
+                    <li>
+                        <img src="../public/img/rtext1.png" alt="钱广告1">
+                    </li>
+                    <li>
+                        <img src="../public/img/rtext2.png" alt="钱广告1">
+                    </li>
+                    <li>
+                        <img src="../public/img/rtext3.png" alt="钱广告1">
+                    </li>
+                </ul>
+            </div>
+            <div class="count">
+                <span>12</span>
+                <span>12</span>
+                <span>12</span>
+                <span>12</span>
+            </div>
+            <div class="money-slip">
+                <img src="../public/img/money.png" alt="钱币">
+            </div>
+            <div class="wall">
+
+            </div>
+        </div>
+
+        <div class="game-score">
+            <div class="score-record">&yen;12</div>
+            <div class="good-word">你太厉害了，快要强到没有对手了</div>
+            <div class="rank-list">
+                <button>玩家最高战绩：&yen;79&nbsp;当前排名：1位</button>
+            </div>
+            <div class="action-end">
+                <img src="../public/img/again.png" alt="再来一次">
+                <img src="../public/img/share.png" alt="分享给朋友">
+            </div>
+        </div>
     </div>
+
+
+
 </body>
 <script src="../public/js/fontSet.js"></script>
 <script>
+    let isPc=true
+    let mouseEventName={
+        "onmousedown":onmousedown,
+        "onmousemove":onmousemove,
+        "onmouseup":onmouseup
+    }
+    let moneyPic = document.querySelector(".money-pic");
+    //随机布置钱币位置
+    function layoutMoney(n) {
+        let sImg = ''
+
+        for (let i = 0; i < n; i++) {
+            let scale = Math.round(Math.random() * 10) * 0.1;
+            let xMove = Math.floor((Math.random() - 0.5) * 20);
+            let deg = Math.round(Math.random() * 360)
+            let yMove = Math.floor((Math.random() - 0.5) * 80);
+            sImg += `<img src="../public/img/d0.png" alt="随机钞票" style="width:3.175rem;
+    height:auto;transform-origin:3rem 6rem;transform:rotate(${deg}deg) scale(${scale},${scale}) translate(${xMove}%,${yMove}%);">`
+        }
+        moneyPic.innerHTML = sImg
+    }
+    layoutMoney(8)
+
+    //底部按钮操作
+    let oShade=document.querySelector('.shade');
+    let oRank=document.querySelector('.rank');
+    let oRuler=document.querySelector('.ruler');
+    let oPrize=document.querySelector(".prize")
+    let oTickets=document.querySelector(".tickets");
+    let oPerson=document.querySelector(".personal");
+    let oClose=document.querySelector(".content .close");
+    function showRank() {
+        oShade.style.display='block';
+        oRank.style.display="block";
+    }
+    function showPrize() {
+        oShade.style.display='block';
+        oPrize.style.display="block";
+    }
+    function showRuler() {
+        oShade.style.display='block';
+        oRuler.style.display="block";
+    }
+    function showTicketUse() {
+        oShade.style.display='block';
+        oTickets.style.display="block";
+    }
+    function closeCur(args){
+        oShade.style.display='none';
+        oRank.style.display='none';
+        oRuler.style.display='none';
+        oPrize.style.display='none';
+        oTickets.style.display='none';
+        oPerson.style.display='none';
+        
+    }
+
+    //开始游戏
+    let oGamePage=document.querySelector(".game-page");
+    let oGameIndex=document.querySelector(".game-index");
+    function start2Game(){
+        oGameIndex.style.display="none";
+        oGamePage.style.display="block";
+        swipeImageLogo()
+        swipeAction()
+    }
+    //游戏页面中的轮播图
+    let oAd = document.querySelector('.game-page .ad');
+    let oUl = document.querySelector(".game-page .ad ul");
+    let timer = null;
+    function swipeImageLogo() {
+        let iW = oAd.offsetWidth;
+        let aLi = oUl.getElementsByTagName('li');
+        oUl.style.width = iW * aLi.length+'px';
+        for (let i = 0; i < aLi.length; i++) {
+            aLi[i].style.width = iW + 'px';
+        }
+        
+    }
+    //轮播图动画效果
+    function swipeAction(){
+        let aLi = oUl.getElementsByTagName('li');
+        let start = 0;
+        clearInterval(timer)
+        tiemr = setInterval(function () {
+            if (start == 2) {
+                start = 0;
+            } else {
+                start += 1;
+            }
+            for (let i = 0; i < aLi.length; i++) {
+                aLi[i].style.display = 'none';
+            }
+            aLi[start].style.display = "block"
+        }, 2000)
+    }
+    //页面大小调整时重新计算页面的宽度
+    window.addEventListener('resize', function () {
+        if(oGamePage.style.display=="block"){
+            swipeImageLogo()
+        }
+        mouseEvent()
+    }, false)
+    //拖动钱币数字增加1
+    let oMoneySlip=document.querySelector(".money-slip");
+    oMoneySlip.mouseEventName.onmousedown=function(e){
+        let icur=e.clientY-oMoneySlip.offsetTop;
+        document.mouseEventName.onmousemove=function(e){
+            console.log('ss')
+        }
+    }
+    //判断pc端和手机端的鼠标事件
+    
+    function mouseEvent(){
+        let sAgentInfo=navigator.userAgent;
+        let arr=["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"]
+        
+        arr.forEach(function(item,index){
+            if(sAgentInfo.includes(item)){
+                isPc=false 
+            }
+        })
+        if(!isPc){
+            mouseEventName.onmousedown=touchstart;
+            mouseEventName.onmousemove=touchmove;
+            mouseEventName.onmousedown=touchend;
+        }
+    }
+
+    mouseEvent()
+
+
+
+
     
 </script>
+
 </html>

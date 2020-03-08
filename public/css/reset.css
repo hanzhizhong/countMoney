@@ -9,6 +9,12 @@ h1,h2,h3,h4,h5,h6{
     font-style:normal;
     font-size:100%;
 }
+a{
+    text-decoration:none;
+}
+li{
+    list-style: none;
+}
 .clearfix:before,.clearfix:after{
     content:'';
     display:table;

@@ -10,13 +10,401 @@ body{
     display:flex;
     position:relative;
 }
-.money-pic{
+.game-index:{
+    position: absolute;
+    left:0;
+    bottom:0;
+    top:0;
+    right:0;
+}
+.game-index .money-pic{
+    position:absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    top:11.4rem;
+    
+    overflow:hidden;
+}
+.game-index .change-title{
+    position: absolute;
+    left:0;
+    top:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:2.8rem;
+    width:100%;
+}
+.game-index .tiaozhan{
+    width:16rem;
+    height:4.95rem;
+    transform:scale(0.9,0.9);
+    transform-origin: center center;
+    margin-left:-32rem;
+    animation:run1 0.5s ease forwards ;
+}
+.game-index .speed{
+    width:15.175rem;
+    height:2.825rem;
+    transform:scale(0.9,0.9);
+    transform-origin: center center;
+    transform:translateY(-0.7rem);
+    margin-right:-32rem;
+    animation:run2 0.5s ease forwards;
+}
+.game-index .ticket{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transform:translateY(-1.2rem);
+}
+.game-index .ticket-dangong{
+    width:2.425rem;
+    height:1.975rem;
+    transform:scale(0.9,0.9);
+    transform-origin: center center;
+    margin-top:-25rem;
+    animation:run3 0.5s ease 0.5s forwards;
+}
+.game-index .ticket-ad{
+    width:12.rem;
+    height:2.925rem;
+    transform:scale(0.9,0.9);
+    transform-origin: center center;
+    margin-left:-32rem;
+    animation:run1 0.5s ease forwards;
+}
+
+@keyframes run1{
+    from{
+        margin-left:-32rem;
+    }
+    to{
+        margin-left:0;
+    }
+}
+@keyframes run2{
+    from{
+        margin-right:-32rem;
+
+    }
+    to{
+        margin-right:0;
+    }
+}
+@keyframes run3{
+    from{
+        margin-top:-25rem;
+        
+    }
+    to{
+        margin-top:0;
+    }
+}
+.game-index .game-start{
+    position:absolute;
+    left:50%;
+    top:19.7rem;
+    width:7.55rem;
+    height:7.3rem;
+    transform:translate(-50%,-50%) scale(0.9,0.9);
+    
+}
+.game-index .game-start .beginbtn{
+    width:100%;
+    height:100%;
+    animation:startBtn 1s linear infinite;
+}
+@keyframes startBtn{
+    0%{
+        transform:scale(1,1);
+    }
+    50%{
+        transform:scale(0.9,0.9);
+    }
+    100%{
+        transform:scale(1,1);
+    }
+}
+.game-index .game-start .hand{
+    width:2.2rem;
+    height:1.825rem;
+    position:absolute;
+    right:0;
+    top:50%;
+    animation:handMove 2s linear infinite;
+}
+@keyframes handMove{
+    0%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    25%{
+        transform:translateY(-50%);
+        opacity:0.5;
+    }
+    50%{
+        transform:translateY(0);
+        opacity:1;
+    }
+    75%{
+        transform:translateY(50%);
+        opacity:0.5;
+    }
+    100%{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+}
+.game-action{
+    position: absolute;
+    left:0;
+    bottom:0;
+    background:url('../img/actions.png') no-repeat center center;
+    width:100%;
+    height:4.5rem;
+    background-size:contain;
+    
+}
+.game-action .action{
+    width:14.5rem;
+    height:2.95rem;
+    display:flex;
+    margin:0 auto;
+    justify-content: center;
+}
+.game-action .action span{
+    flex:1;
+}
+.shade{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(0,0,0,0.8);
+}
+.popup{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+}
+.popup .content{
+    width:65%;
+    position: absolute;
+    top:6rem;
+    left:50%;
+    transform:translateX(-50%);
+    min-height:8rem;
+    background-color:#FFE7CA;
+    border:2px solid #D42C2D;
+    border-radius:0.4rem;
+    padding:0.5rem;
+    display:flex;
+    flex-direction: column;
+    
+}
+.popup .close{
+    position:absolute;
+    right:0;
+    top:-1.5rem;
+    width:0.775rem;
+    height:0.775rem;
+}
+.content h3{
+    font-size:0.8rem;
+    color:#323232;
+    font-weight: bold;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:0.6rem 0;
+}
+.content h3 span{
+    font-size:0.6rem;
+    color:#666666;
+    font-weight: normal;
+    width:68%;
+    text-align:center;
+    margin-top:-1rem;
+}
+.content h3 img{
+    transform:scale(0.5,0.5);
+}
+.content ul{
+    padding-bottom:1rem;
+}
+.content li{
+    font-size:0.5rem;
+    text-align: justify;
+}
+.content .score{
+    width:70%;
+    height:2rem;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px dashed #D42C2D;
+}
+.content li img{
+    width:0.6rem;
+    height:0.6rem;
+}
+.content li input{
+    outline:none;
+    border:2px solid #D42C2D;
+    border-radius: 0.4rem;
+    display:block;
+    width:80%;
+    height:1.7rem;
+    margin:0.5rem auto;
+    background-color:#F2B309;
+    padding-left:0.25rem;
+
+}
+.content li button{
+    width:60%;
+    padding:0.5rem 0;
+    display:block;
+    margin:0.8rem auto;
+    border:none;
+    background-color:#D42C2D;
+    border-radius:0.4rem;
+    font-size:0.8rem;
+    color:#fff;
+    outline:none;
+}
+
+
+/* 游戏页面 */
+.game-page{
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    background:url('../img/runningBg.png') no-repeat 0 0;
+    background-size:contain;
+}
+.game-page .ad{
+    width:100%;
+    margin-top:4rem;
+    height:5rem;
+    overflow:hidden;
+    position:relative;
+}
+.game-page .ad ul{
+    position: absolute;
+    left:0;
+    top:0;
+    display:flex;
+}
+.game-page .ad img{
+    width:13.225rem;
+    height:5.375rem;
+    transform:scale(0.9,0.9);
+    margin:auto;
+    display: block;
+}
+.game-page .count{
+    width:9.625rem;
+    height:2.725rem;
+    background:url('../img/time.png') no-repeat 0 0;
+    background-size:contain;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+.game-page .count span{
+    flex:1;
+
+    margin:0 0.9rem 0 0.3rem;
+    text-align:center;
+}
+.game-page .count span:last-child{
+    flex:2;
+    margin-top:0.2rem;
+    margin-left:0.9rem;
+}
+.game-page .money-slip{
+    position: absolute;
+    width:9.5rem;
+    left:50%;
+    height:15rem;
+    bottom:0;
+    transform:translateX(-50%);
+    overflow:hidden;
+}
+.game-page .money-slip img{
+    position: absolute;
+    width:9.5rem;
+    height:19.3rem;
+    left:0;
+    top:0;
+}
+.game-page .wall{
+    position: absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:3.85rem;
+    background:url('../img/bottom.png') no-repeat center center;
+    background-size:contain;
+}
+/* 游戏得分 */
+.game-score{
     position:absolute;
     left:0;
     top:0;
     width:100%;
     height:100%;
+    background:url('../img/page3.png') no-repeat 0 0.5rem;
+    background-size:contain;
 }
-.change-title{
+.score-record{
+    margin-top:7.5rem;
+    font-size:1.5rem;
+    color:#fff;
+    text-align:center;
+}
+.game-score .good-word{
+    font-size:0.5rem;
+    color:#ffffff;
+    text-align:center;
+    margin:1rem 0;
+}
+.game-score .rank-list{
+    display:flex;
+    justify-content: center;
+}
+.game-score .rank-list button{
+    padding:0.4rem 2rem;
+    background-color:#ffffff;
+    border:none;
+    outline:none;
+    color:#D42C2D;
+    font-size:0.5rem;
+    border-radius:0.5rem;
+}
+.game-score .action-end{
+    display:flex;
+    justify-content: center;
+    margin:3rem 0;
+}
+.game-score .action-end img{
+    width:4.6rem;
+    height:4.825rem;
+    margin:0 1rem;
+}
 
+
+.shade,.rank,.ruler,.prize,.tickets,.personal,.game-page,.game-score{
+    display:none;
 }
